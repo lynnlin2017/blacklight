@@ -187,30 +187,6 @@ module Blacklight::CatalogHelperBehavior
   end
 
   ##
-  # Does the document have a thumbnail to render?
-  #
-  # @param [SolrDocument] document
-  # @return [Boolean]
-  def has_thumbnail? document
-    index_presenter(document).thumbnail.exists?
-  end
-  deprecation_deprecate has_thumbnail?: "use IndexPresenter#thumbnail.exists?"
-
-  ##
-  # Render the thumbnail, if available, for a document and
-  # link it to the document record.
-  #
-  # @param [SolrDocument] document
-  # @param [Hash] image_options to pass to the image tag
-  # @param [Hash] url_options to pass to #link_to_document
-  # @return [String]
-  # TODO: Move this to the IndexPresenter (or a ThumbnailPresenter)
-  def render_thumbnail_tag document, image_options = {}, url_options = {}
-    index_presenter(document).thumbnail.thumbnail_tag(image_options, url_options)
-  end
-  deprecation_deprecate render_thumbnail_tag: "Use IndexPresenter#thumbnail.thumbnail_tag"
-
-  ##
   # Get the URL to a document's thumbnail image
   #
   # @param [SolrDocument] document
