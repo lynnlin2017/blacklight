@@ -40,10 +40,6 @@ module Blacklight::UrlHelperBehavior
 
     { data: { :'context-href' => path } }
   end
-<<<<<<< HEAD
-  private :session_tracking_params
-=======
->>>>>>> Remove the index_presenter helper method
 
   ##
   # Get the URL for tracking search sessions across pages using polymorphic routing
